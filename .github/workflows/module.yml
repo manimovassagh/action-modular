@@ -9,11 +9,6 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: List files
-        run: ls -R .github/actions
 
       - name: Run Job 1
         uses: ./.github/actions/job1
