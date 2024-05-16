@@ -9,6 +9,9 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Run Job 1
         uses: ./.github/actions/job1
         with:
