@@ -2,7 +2,6 @@ name: "Job 2"
 description: "This is Job 2"
 
 runs:
-  using: "composite"
   steps:
     - name: Checkout code
       uses: actions/checkout@v2
