@@ -1,17 +1,16 @@
-name: Job 1
+name: "Job 1"
+description: "This is Job 1"
 
-on:
-  workflow_call:
-    inputs:
-      param1:
-        required: true
-        type: string
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Run Job 1
-        run: echo 'Test job 1'
+    - name: Run Job 1
+      run: echo "Job 1: ${{ inputs.param1 }}"
+
+inputs:
+  param1:
+    description: "Parameter for Job 1"
+    required: true
