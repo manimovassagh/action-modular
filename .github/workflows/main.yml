@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  call-job1:
+  run-main-part:
     uses: ./.github/workflows/job1.yml
     with:
       param1: "Hello from Job 1"
