@@ -8,9 +8,5 @@ runs:
       uses: actions/checkout@v2
 
     - name: Run Job 2
-      run: echo "Job 2: ${{ inputs.param2 }}"
+      run: echo 'composite 2'
 
-inputs:
-  param2:
-    description: "Parameter for Job 2"
-    required: true
