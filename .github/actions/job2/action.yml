@@ -1,14 +1,14 @@
 name: "Job 2"
 description: "This is Job 2"
 
+inputs:
+  param2:
+    description: "Parameter for Job 2"
+    required: true
+
 runs:
   using: "composite"
   steps:
     - name: Run Job 2
       run: echo "Job 2: ${{ inputs.param2 }}"
       shell: bash
-
-inputs:
-  param2:
-    description: "Parameter for Job 2"
-    required: true
