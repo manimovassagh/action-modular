@@ -3,8 +3,8 @@ name: Job 1 Workflow
 on:
   workflow_call:
     inputs:
-      param1:
-        required: true
+      param2:
+        required: false
         type: string
 
 jobs:
@@ -14,4 +14,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Run Job 1
-        run: echo "Job 1: ${{ inputs.param1 }}"
+        run: echo "testtt"
