@@ -1,0 +1,17 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-job1:
+    uses: ./.github/workflows/job1.yml
+    with:
+      param1: "Hello from Job 1"
+
+  call-job2:
+    uses: ./.github/workflows/job2.yml
+    with:
+      param2: "Hello from Job 2"

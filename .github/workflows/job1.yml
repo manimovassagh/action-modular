@@ -1,0 +1,17 @@
+name: Job 1 Workflow
+
+on:
+  workflow_call:
+    inputs:
+      param1:
+        required: true
+        type: string
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run Job 1
+        run: echo "Job 1: ${{ inputs.param1 }}"
