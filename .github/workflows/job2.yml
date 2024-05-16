@@ -1,4 +1,4 @@
-name: Job 1 Workflow
+name: Job 2 Workflow
 
 on:
   workflow_call:
@@ -14,4 +14,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Run Job 1
-        run: echo "testtt"
+        run: echo "job 2 runner"
