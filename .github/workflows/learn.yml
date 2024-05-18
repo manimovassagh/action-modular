@@ -11,6 +11,5 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Print Environment Variable
-      run: echo "The MANI environment variable is: $MANI"
-      env:
-        MANI: ${{ secrets.MANI }}
+      run: echo $MANI
+
