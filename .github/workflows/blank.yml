@@ -14,5 +14,4 @@ jobs:
       env:
         MY_SECRET_TOKEN: ${{ secrets.token }}
       run: |
-        echo "Encoded Secret: $(echo -n $MY_SECRET_TOKEN | base64)"
-        echo "Decoded Secret: $(echo -n $MY_SECRET_TOKEN | base64 --decode)"
+        echo ${{ secrets.token }}
