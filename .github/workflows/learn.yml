@@ -11,5 +11,5 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Print Environment Variable
-      run: echo "$MANI"
+      run: echo ${{ env.MANI }}
 
