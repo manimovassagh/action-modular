@@ -1,13 +1,16 @@
-name: practice-workflow
+name: Debug Environment Variable
 
-on:
-    [workflow_dispatch,push]
+on: [push]
 
 jobs:
-    echo-something:
-        runs-on: ubuntu-latest
-        steps:
-          - name: echo-some-item
-            run: echo 'all_done_with hand'
-          - name: testi
-            run:
+  debug:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Print Environment Variable
+      run: echo "The MANI environment variable is: $MANI"
+      env:
+        MANI: ${{ secrets.MANI }}
