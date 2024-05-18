@@ -12,3 +12,5 @@ jobs:
 
     - name: Print Environment Variable
       run: echo "The MANI environment variable is: ${{ env.MANI }}"
+      env:
+        MANI: ${{ secrets.MANI }}  # Ensure MANI is available in the environment
