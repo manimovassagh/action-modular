@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/my-custom-action
         with:
-          input-name: 'my-value'
+          input-name: 'Mani could do it !!!!!!!!!!!!1'
 
       - name: Run custom action
         uses: ./.github/actions/printer
