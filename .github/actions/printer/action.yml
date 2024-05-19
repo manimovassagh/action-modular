@@ -1,10 +1,9 @@
-name: CI
-description: 'CI'
+name: 'Printer Action'
+description: 'A custom action to print something'
 runs:
-  using: composite
+  using: 'composite'
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: echo something
-      run: echo "Salam kon be in action baby"
+    - run: echo "Printing something..."
+      shell: bash
+    - run: echo 'Mani is doing this action manually'
       shell: bash
