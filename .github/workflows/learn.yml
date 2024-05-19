@@ -9,4 +9,4 @@ jobs:
           - name: echo-some-item
             run: echo 'all_done_with hand'
           - name: printer
-            uses: ./.github/actions/printer
+            uses: ./.github/actions/printer/action.yml
