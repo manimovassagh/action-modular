@@ -1,7 +1,6 @@
-name: practice-workflow
+name: Debug Environment Variablew
 
-on:
-    [workflow_dispatch,push]
+on: [push]
 
 jobs:
     echo-something:
