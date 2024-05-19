@@ -8,5 +8,7 @@ jobs:
         steps:
           - name: echo-some-item
             run: echo 'all_done_with hand'
+          - name: checkout repo
+            uses: actions/checkout@v2
           - name: printer
             uses: ./.github/actions/printer/action.yml
