@@ -1,10 +1,14 @@
-name: 'Printer'
-description: 'A simple GitHub Action to print messages'
-inputs:
-  message:
-    description: 'Message to print'
-    required: true
-    default: 'Hello, World!'
+name: CI
+description: 'CI'
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: 'composite'
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: echo something
+      run: echo "Hello World"
+      shell: bash
+  
+
+
+
