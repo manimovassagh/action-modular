@@ -1,0 +1,15 @@
+name: 'My Custom Action'
+description: 'A custom action to perform a specific task'
+inputs:
+  input-name:
+    description: 'An input parameter for the action'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: echo "Running My Custom Action with input ${{ inputs.input-name }}"
+      shell: bash
+    - run: |
+        # Add additional commands or scripts here
+        # to perform the desired task
+      shell: bash
