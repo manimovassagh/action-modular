@@ -1,14 +1,17 @@
-name: composite acions learn
+name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-    echo-something:
-        runs-on: ubuntu-latest
-        steps:
-          - name: echo-some-item
-            run: echo 'all_done_with hand'
-          - name: checkout repo
-            uses: actions/checkout@v2
-          - name: printer
-            uses: ./.github/actions/printer/action.yml
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Run custom action
+        uses: ./.github/actions/printer
