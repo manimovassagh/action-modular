@@ -1,0 +1,11 @@
+name: custom-composite-action
+description: 'Custom composite action'
+author: 'Mani Movassagh'
+
+
+runs:
+  using: composite
+  steps:
+    - name: printer
+      run: echo "Hello World"
+      shell: bash
