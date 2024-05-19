@@ -3,7 +3,8 @@ description: 'CI'
 runs:
   using: composite
   steps:
-
+    - name: Checkout
+      uses: actions/checkout@v4
     - name: echo something
       run: echo "Salam kon be in action baby"
       shell: bash
