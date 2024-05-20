@@ -20,13 +20,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ inputs.node-version }}
 
-      - name: Install dependencies
-        run: echo 'mani is coming'
+      - name: pass something
+        run: echo ${{ inputs.node-version }} is the node version
 
       - name: Run tests
         run: ${{ inputs.test-command }}
