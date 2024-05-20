@@ -14,3 +14,10 @@ jobs:
     with:
       node-version: '16'
       test-command: 'echo this is passed reuse'
+
+
+  second-reuse:
+    uses: ./.github/workflows/reuse.yml
+    with:
+      node-version: '16'
+      test-command: 'echo this is passed reuse again'
