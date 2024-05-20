@@ -1,0 +1,16 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  use-reusable-workflow:
+    uses: ./.github/workflows/reuse.yml
+    with:
+      node-version: '16'
+      test-command: 'npm test'
