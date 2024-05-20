@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ inputs.node-version }}
 
       - name: Install dependencies
-        run: npm install
+        run: echo 'mani is coming'
 
       - name: Run tests
         run: ${{ inputs.test-command }}
