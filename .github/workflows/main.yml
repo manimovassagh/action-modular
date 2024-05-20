@@ -13,4 +13,4 @@ jobs:
     uses: ./.github/workflows/reuse.yml
     with:
       node-version: '16'
-      test-command: 'npm test'
+      test-command: 'this is passed reuse'
