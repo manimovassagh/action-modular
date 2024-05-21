@@ -1,18 +1,26 @@
-name: CI
+name: Test xvfb
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/my-custom-action
-        with:
-          input-name: 'Mani could do it !!!!!!!!!!!!1'
 
-      - name: Run custom action
-        uses: ./.github/actions/printer
+  test-xvfb:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+
+    - name: Run script with xvfb
+      run: |
+        xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" bash -c 'echo "Hello, World!" && sleep 5'
