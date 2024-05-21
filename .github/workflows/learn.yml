@@ -1,18 +1,27 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
+   workflow_dispatch:
 
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/my-custom-action
-        with:
-          input-name: 'Mani could do it !!!!!!!!!!!!1'
 
-      - name: Run custom action
-        uses: ./.github/actions/printer
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        
+
+    - name: Run Cypress tests
+      working-directory: ./angular-project
+      env:
+        CYPRESS_BROWSER: chrome
+      run: |
+        sudo apt-get install -y xvfb
+        xvfb-run --auto-servernum npx cypress run --browser chrome
